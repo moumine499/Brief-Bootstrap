@@ -1,224 +1,475 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soumara Coffee</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-   
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soumara Café</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
-       
+      /* Palette café */
+      :root {
+        --main-coffee: #6f4e37;
+        --main-coffee-hover: #5a3e2b;
+        --light-bg: #f8f5f2;
+        --text-dark: #3c2f2f;
+        --white: #ffffff;
+        --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Réinitialisation rapide */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--text-dark);
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Navbar */
+      .navbar-light .navbar-nav .nav-link {
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-light .navbar-nav .nav-link:hover,
+      .navbar-light .navbar-nav .nav-link.active {
+        color: var(--main-coffee);
+      }
+
+      .navbar-brand h1 {
+        color: var(--main-coffee);
+        font-weight: bold;
+        font-size: 28px;
+      }
+
+      /* Boutons */
+      .btn-danger {
+        background-color: var(--main-coffee);
+        border: none;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .btn-danger:hover {
+        background-color: var(--main-coffee-hover);
+        transform: scale(1.03);
+      }
+
+      /* Titres */
+      h1,
+      h3,
+      h4 {
+        color: var(--main-coffee);
+      }
+
+      /* Bannière */
+      .banner_section {
+        background: url("../images/banner-bg.jpg") center/cover no-repeat;
+        color: white;
+        text-shadow: 1px 1px 3px #000000aa;
+      }
+
+      /* About */
+      .about_section {
+        background-color: white;
+        padding: 60px 0;
+      }
+
+      /* Galerie */
+      .gallery_section img {
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery_section img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Menu */
+      .box_main {
+        background-color: var(--white);
+        border: 1px solid #e6e3e3;
+        border-left: 5px solid var(--main-coffee);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .box_main:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Section Avis Clients */
+      .testimonials_section {
+        background-color: #fff8f3;
+      }
+
+      .testimonials_section .p-3 {
+        border-left: 4px solid var(--main-coffee);
+        background-color: white;
+        box-shadow: var(--shadow);
+        height: 100%;
+      }
+
+      /* Contact */
+      .contact_section {
+        background-color: var(--white);
+      }
+
+      /* Footer */
+      .footer_section {
+        background-color: var(--main-coffee);
+        color: var(--white);
+        padding: 40px 0;
+      }
+
+      .footer_section a {
+        color: #f1e9e4;
+        text-decoration: none;
+      }
+
+      .footer_section a:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+
+      .footer_social i {
+        margin-right: 10px;
+        color: #f1e9e4;
+        font-size: 20px;
+        transition: color 0.3s ease;
+      }
+
+      .footer_social i:hover {
+        color: var(--white);
+      }
+
+      /* Copyright */
+      .copyright_section {
+        background-color: #5a3e2b;
+        color: #ddd;
+        font-size: 14px;
+      }
     </style>
-</head>
-<body>
-
-<!-- Header Section -->
-<div class="header_section">
-    <div class="container-fluid">
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header_section">
+      <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <h1 class="m-0" style="color: red;">Soumara Coffee<span style="color: red;">.</span></h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galery">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menue">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <h1 class="m-0">Soumara <span>Café</span></h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menue">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#galery">Galerie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#avis">Avis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
         </nav>
+      </div>
     </div>
-</div>
 
-<!-- Banner Section -->
-<div class="banner_section layout_padding text-center py-5">
-    <div class="container">
+    <!-- Banner Section -->
+    <div class="banner_section layout_padding text-center py-5">
+      <div class="container">
         <h1 class="outstanding_text">Bienvenue</h1>
         <h1 class="coffee_text">à Soumara</h1>
-        <a href="#" class="btn btn-danger mt-3">En savoir +</a>
+        <a href="#" class="btn btn-danger mt-3">Découvrir</a>
+      </div>
     </div>
-</div>
 
-<!-- About Section -->
-<div class="about_section layout_padding" id="about">
-    <div class="container">
+    <!-- About Section -->
+    <div class="about_section layout_padding" id="about">
+      <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="about_taital_main">
-                    <div class="about_taital">En savoir + sur nous</div>
-                    <p class="about_text">
-                        Au Café Soumara, nous croyons que chaque café mérite une expérience inoubliable. Depuis notre ouverture, notre objectif est simple : offrir à nos clients un espace chaleureux et convivial, où la qualité et la passion pour le café sont au cœur de chaque service.
-                    </p>
-                    <p class="about_text">
-                        Nous sélectionnons avec soin nos grains, préparons chaque boisson avec amour et proposons des douceurs faites maison pour accompagner votre pause café. Que vous soyez pressé, en rendez-vous d’affaires ou simplement en quête d’un moment de détente, notre équipe est là pour vous accueillir.
-                    </p>
-                    <a href="#" class="btn btn-danger mt-2">En savoir +</a>
-                </div>
+          <div class="col-md-6">
+            <div class="about_taital_main">
+              <div class="about_taital">En savoir + sur nous</div>
+              <p class="about_text">
+                Au Café Soumara, nous croyons que chaque café mérite une
+                expérience inoubliable. Depuis notre ouverture, notre objectif
+                est simple : offrir à nos clients un espace chaleureux et
+                convivial, où la qualité et la passion pour le café sont au cœur
+                de chaque service.
+              </p>
+              <p class="about_text">
+                Nous sélectionnons avec soin nos grains, préparons chaque
+                boisson avec amour et proposons des douceurs faites maison pour
+                accompagner votre pause café.
+              </p>
+              <a href="#" class="btn btn-danger mt-2">Lire la suite</a>
             </div>
-            <div class="col-md-6">
-                <img src="about-img.png" class="img-fluid" alt="À propos de Soumara Coffee">
-            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="about-img.png"
+              class="img-fluid"
+              alt="À propos de Soumara Coffee"
+            />
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Gallery Section -->
-<div class="gallery_section layout_padding" id="galery">
-    <div class="container">
+    <!-- Gallery Section -->
+    <div class="gallery_section layout_padding" id="galery">
+      <div class="container">
         <div class="text-center mb-4">
-            <h1 class="gallery_taital">Consultez notre galerie</h1>
-            <p>Plongez dans l’univers du Café Soumara à travers notre galerie photo. Découvrez notre ambiance chaleureuse, nos délicieux cafés et pâtisseries, et nos moments de partage avec nos clients.</p>
+          <h1 class="gallery_taital">Consultez notre galerie</h1>
+          <p>
+            Plongez dans l’univers du Café Soumara à travers notre galerie
+            photo.
+          </p>
         </div>
         <div class="row g-3">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-1.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-2.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-3.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-4.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-5.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-6.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-7.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-8.png" alt="Café" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <img src="images/img-9.png" alt="Café" class="img-fluid">
-            </div>
+          <!-- Images galerie -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <img src="images/img-1.png" alt="Café" class="img-fluid" />
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <img src="images/img-5.png" alt="Ambiance" class="img-fluid" />
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <img src="images/img-3.png" alt="Client" class="img-fluid" />
+          </div>
         </div>
         <div class="text-center mt-3">
-            <a href="#" class="btn btn-danger">Voir +</a>
+          <a href="#" class="btn btn-danger">Voir +</a>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Menu Section -->
-<div class="services_section layout_padding" id="menue">
-    <div class="container">
+    <!-- Menu Section -->
+    <div class="services_section layout_padding" id="menue">
+      <div class="container">
         <div class="text-center mb-4">
-            <h1 class="services_taital">Consultez notre menu délicieux</h1>
+          <h1 class="services_taital">Consultez notre menu délicieux</h1>
         </div>
         <div class="row g-3">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="box_main active text-center p-3 border rounded">
-                    <img src="images/icon1.png" class="img-fluid mb-2" alt="Cafés">
-                    <h3 class="decorate_text">Cafés</h3>
-                    <p>Des expressos intenses aux lattes onctueux, chaque café est préparé avec soin pour révéler toutes ses notes aromatiques.</p>
-                    <a href="#" class="btn btn-danger btn-sm">En savoir plus</a>
-                </div>
+          <!-- Cartes Menu -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="box_main active text-center p-3 border rounded">
+              <img src="images/icon1.png" class="img-fluid mb-2" alt="Cafés" />
+              <h3 class="decorate_text">Cafés</h3>
+              <p>Des expressos intenses aux lattes onctueux.</p>
+              <a href="#" class="btn btn-danger btn-sm">Voir le détail</a>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="box_main text-center p-3 border rounded">
-                    <img src="images/icon2.png" class="img-fluid mb-2" alt="Thés & Infusions">
-                    <h3 class="decorate_text">Thés & Infusions</h3>
-                    <p>Des saveurs douces et raffinées, parfaites pour un moment de détente.</p>
-                    <a href="#" class="btn btn-danger btn-sm">En savoir plus</a>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="box_main text-center p-3 border rounded">
+              <img src="images/icon2.png" class="img-fluid mb-2" alt="Thés" />
+              <h3 class="decorate_text">Thés & Infusions</h3>
+              <p>Des saveurs douces et raffinées.</p>
+              <a href="#" class="btn btn-danger btn-sm">Voir le détail</a>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="box_main text-center p-3 border rounded">
-                    <img src="images/icon2.png" class="img-fluid mb-2" alt="Pâtisseries & Snacks">
-                    <h3 class="decorate_text">Pâtisseries & Snacks</h3>
-                    <p>Des créations maison pour accompagner votre boisson et rendre votre pause gourmande encore plus agréable.</p>
-                    <a href="#" class="btn btn-danger btn-sm">En savoir plus</a>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="box_main text-center p-3 border rounded">
+              <img src="images/icon2.png" class="img-fluid mb-2" alt="Snacks" />
+              <h3 class="decorate_text">Pâtisseries & Snacks</h3>
+              <p>Des créations maison pour une pause gourmande.</p>
+              <a href="#" class="btn btn-danger btn-sm">Voir le détail</a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Contact Section -->
-<div class="contact_section layout_padding" id="contact">
-    <div class="container">
+    <!-- Avis Clients Section -->
+    <div class="testimonials_section layout_padding bg-light py-5" id="avis">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h1 class="services_taital">Ce que disent nos clients</h1>
+          <p>Découvrez les témoignages de nos clients fidèles.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-3 border rounded bg-white shadow-sm">
+              <p>
+                “Un endroit chaleureux avec un café exceptionnel. Je recommande
+                vivement !”
+              </p>
+              <h6 class="mt-3 mb-0">— Fatou D.</h6>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border rounded bg-white shadow-sm">
+              <p>
+                “Le service est top, et les pâtisseries maison sont juste
+                incroyables.”
+              </p>
+              <h6 class="mt-3 mb-0">— Ibrahim K.</h6>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border rounded bg-white shadow-sm">
+              <p>
+                “Mon nouveau café préféré à Moundou. Ambiance calme et café
+                délicieux.”
+              </p>
+              <h6 class="mt-3 mb-0">— Amina T.</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact_section layout_padding" id="contact">
+      <div class="container">
         <h1 class="text-center contact_text mb-4">Contact</h1>
         <div class="row g-4">
-            <div class="col-md-6">
-                <form action="#" method="post" class="row g-3">
-                    <div class="col-md-6">
-                        <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="phone" class="form-label">Téléphone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Votre numéro">
-                    </div>
-                    <div class="col-12">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-danger">Envoyer</button>
-                    </div>
-                </form>
+          <div class="col-md-6">
+            <form action="#" method="post" class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Nom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Votre nom"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Votre email"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="phone" class="form-label">Téléphone</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Votre numéro"
+                />
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Votre message"
+                  required
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-danger">Envoyer</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31204.85531997324!2d15.077275867211926!3d12.139025545590883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2std!4v1756493065291!5m2!1sfr!2std"
+                width="100%"
+                height="350"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
-            <div class="col-md-6">
-                <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31204.85531997324!2d15.077275867211926!3d12.139025545590883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2std!4v1756493065291!5m2!1sfr!2std" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Footer Section -->
-<div class="footer_section layout_padding">
-    <div class="container">
+    <!-- Footer Section -->
+    <div class="footer_section layout_padding">
+      <div class="container">
         <div class="row text-center text-lg-start">
-            <div class="col-lg-3 col-sm-6 mb-3">
-                <h3 class="useful_text">À propos</h3>
-                <p>Au Café Soumara, nous croyons que chaque café mérite une expérience inoubliable. Depuis notre ouverture, notre objectif est simple : offrir un espace chaleureux et convivial.</p>
+          <div class="col-lg-3 col-sm-6 mb-3">
+            <h3 class="useful_text">À propos</h3>
+            <p>
+              Nous croyons que chaque café mérite une expérience inoubliable.
+            </p>
+          </div>
+          <div class="col-lg-3 col-sm-6 mb-3">
+            <h3 class="useful_text">Menu</h3>
+            <ul class="list-unstyled footer_menu">
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#galery">Galerie</a></li>
+              <li><a href="#menue">Menu</a></li>
+              <li><a href="#avis">Avis</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 mb-3">
+            <h3 class="useful_text">Contact</h3>
+            <ul class="list-unstyled location_text">
+              <li><i class="fa fa-map-marker"></i> Moundou Centre-ville</li>
+              <li><i class="fa fa-phone"></i> +235 99 88 77 66</li>
+              <li><i class="fa fa-envelope"></i> soumaracafe@gmail.com</li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 mb-3">
+            <h3 class="useful_text">Horaires</h3>
+            <p>Lun - Sam : 7h - 20h<br />Dimanche : 8h - 14h</p>
+            <div class="footer_social mt-2">
+              <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-3">
-                <h3 class="useful_text">Menu</h3>
-                <ul class="list-unstyled footer_menu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#galery">Galerie</a></li>
-                    <li><a href="#menue">Menu</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-3">
-                <h3 class="useful_text">Contact</h3>
-                <ul class="list-unstyled location_text">
-                    <li><i class="fa fa-map-marker"></i> Moundou, Tchad</li>
-                    <li><i class="fa fa-phone"></i> +235 66 66 66 66</li>
-                    <li><i class="fa fa-envelope"></i> soumaracoffe@gmail.com</li>
-                </ul>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Copyright -->
-<div class="copyright_section text-center py-2">
-    <p class="copyright_text">&copy; 2025 Tous droits réservés Soumara Coffee</p>
-</div>
+    <!-- Copyright -->
+    <div class="copyright_section text-center py-2">
+      <p class="copyright_text">
+        &copy; 2025 Tous droits réservés Soumara Café
+      </p>
+    </div>
 
-<script src="js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
